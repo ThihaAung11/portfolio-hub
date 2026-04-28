@@ -22,7 +22,7 @@ export const Contact = () => {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.from("contact_messages").insert(parsed.data);
+    const { error } = await supabase.from("contact_messages").insert(parsed.data as { name: string; email: string; message: string });
     setLoading(false);
     if (error) {
       toast.error("Failed to send. Please try again.");
