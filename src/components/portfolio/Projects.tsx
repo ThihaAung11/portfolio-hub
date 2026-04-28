@@ -26,12 +26,6 @@ const projects = [
     description: "Routing algorithms and APIs for fiber management — improved accuracy and operational efficiency.",
     tags: ["Python", "Algorithms", "REST APIs"],
   },
-  {
-    title: "Add Your Project",
-    description: "Showcase a new project here — replace this card with your latest work.",
-    tags: ["Coming soon"],
-    placeholder: true,
-  },
 ];
 
 export const Projects = () => (
@@ -47,9 +41,7 @@ export const Projects = () => (
         {projects.map((p) => (
           <article
             key={p.title}
-            className={`group card-elegant border border-border rounded-xl p-6 transition-smooth hover:border-primary/40 hover:-translate-y-1 ${
-              p.placeholder ? "border-dashed opacity-70" : ""
-            }`}
+            className="group card-elegant border border-border rounded-xl p-6 transition-smooth hover:border-primary/40 hover:-translate-y-1"
           >
             <div className="flex justify-between items-start mb-4">
               <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold">
