@@ -26,12 +26,6 @@ const projects = [
     description: "Routing algorithms and APIs for fiber management — improved accuracy and operational efficiency.",
     tags: ["Python", "Algorithms", "REST APIs"],
   },
-  {
-    title: "Add Your Project",
-    description: "Showcase a new project here — replace this card with your latest work.",
-    tags: ["Coming soon"],
-    placeholder: true,
-  },
 ];
 
 export const Projects = () => (
