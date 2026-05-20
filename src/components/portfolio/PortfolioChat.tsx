@@ -7,7 +7,7 @@ type Message = {
   showResume?: boolean;
 };
 
-const resumeUrl = "/thiha-aung-resume.txt";
+const resumeUrl = "/thiha-aung-resume.pdf";
 
 const suggestions = [
   "Tell me about Thiha",
