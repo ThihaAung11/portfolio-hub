@@ -5,11 +5,11 @@ const experiences = [
     location: "Remote · US",
     period: "Jun 2024 — Apr 2026",
     points: [
-      "Designed and deployed scalable backend for Daytwo financial app and Loan Management system serving 200+ active users.",
-      "Built LLM-powered conversational AI features with OpenAI and LangChain for intelligent financial tracking.",
-      "Implemented data pipelines syncing production and analytical databases.",
-      "Established CI/CD with GitHub Actions, reducing release time from days to hours.",
-      "Built cross-platform mobile apps with React Native.",
+      "Owned backend architecture for Daytwo and the Loan Management system end-to-end, supporting 200+ active users with improved reliability and performance.",
+      "Built LLM-powered RAG and conversational AI features for income and expense recording, financial queries, business summaries, and daily action cards.",
+      "Designed agentic workflows for item matching, auto fill, and double-entry classification to reduce manual entry and improve financial data accuracy.",
+      "Built data pipelines that kept production and analytics databases in sync for business reporting.",
+      "Optimized PostgreSQL schemas, indexes, and queries, and established GitHub Actions CI/CD across development and production.",
     ],
   },
   {
@@ -18,8 +18,9 @@ const experiences = [
     location: "On-site · Myanmar",
     period: "Nov 2023 — Jun 2024",
     points: [
-      "Designed FastAPI backend for the Learning Assistance Web Platform.",
-      "Built LLM-powered conversational AI for real-time learning assistance.",
+      "Owned FastAPI backend and database design for the Learning Assistance Web Platform, including APIs, schema design, data models, lessons, users, quizzes, and progress tracking.",
+      "Contributed to a RAG-based lesson PDF pipeline for processing lesson materials and generating multiple-choice quizzes.",
+      "Built an AI-assisted coaching CRM for MSME mentors with call notes, follow-up scheduling, and AI-generated guidance based on client data and coaching rules.",
     ],
   },
   {
@@ -28,9 +29,9 @@ const experiences = [
     location: "On-site · Myanmar",
     period: "Mar 2023 — Nov 2023",
     points: [
-      "Developed routing algorithms for fiber management systems.",
-      "Built backend services and APIs for route calculation and integration.",
-      "Created CLI and web tools for tuning station systems.",
+      "Developed and optimized graph-based route calculation algorithms for fiber management systems using BFS, NumPy, and efficient data structures, improving route calculation speed by 5x.",
+      "Built backend services and APIs for route calculation and system integration.",
+      "Developed frontend and command-line tools for camera tuning workflows and automated sensor data reports.",
     ],
   },
   {
@@ -39,8 +40,9 @@ const experiences = [
     location: "On-site · Myanmar",
     period: "Feb 2021 — Feb 2023",
     points: [
-      "Built OCR system for Myanmar NRC documents end-to-end.",
-      "Developed face detection for document verification using OpenCV.",
+      "Developed an OCR system for Myanmar NRC documents, including data collection, preprocessing, model training, image enhancement, segmentation, and post-processing.",
+      "Improved OCR accuracy using spell checking and image preprocessing techniques.",
+      "Built a face detection system for document verification using OpenCV.",
       "Built Flask APIs for ML model deployment.",
     ],
   },

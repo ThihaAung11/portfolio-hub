@@ -15,8 +15,8 @@ export const Hero = () => {
             production-ready systems.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-            5+ years of experience in computer vision, LLM-powered apps, and scalable backend
-            services. Built across fintech, edtech, and telecom — from architecture to CI/CD.
+            5+ years of experience building production backend systems, LLM applications, RAG and
+            conversational AI systems, OCR tools, data pipelines, and cloud APIs.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

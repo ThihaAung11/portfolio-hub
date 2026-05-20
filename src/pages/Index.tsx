@@ -12,7 +12,7 @@ const Index = () => {
   useEffect(() => {
     document.title = "Thiha Aung — AI Engineer Portfolio";
     const meta = document.querySelector('meta[name="description"]');
-    const content = "Thiha Aung — AI Engineer with 5+ years in LLMs, computer vision, FastAPI, and AWS. Building production-ready AI systems.";
+    const content = "Thiha Aung — AI Engineer with 5+ years building backend systems, LLM applications, RAG and conversational AI, OCR tools, data pipelines, and cloud APIs.";
     if (meta) meta.setAttribute("content", content);
     else {
       const m = document.createElement("meta");
