@@ -1,0 +1,1 @@
+CREATE POLICY "Deny all reads on contact_messages" ON public.contact_messages FOR SELECT USING (false);
