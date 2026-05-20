@@ -6,6 +6,7 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { PortfolioChat } from "@/components/portfolio/PortfolioChat";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -32,6 +33,7 @@ const Index = () => {
       <Skills />
       <Contact />
       <Footer />
+      <PortfolioChat />
     </main>
   );
 };
