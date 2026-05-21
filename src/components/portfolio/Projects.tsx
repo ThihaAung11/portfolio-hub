@@ -32,57 +32,50 @@ const projects: {
 ];
 
 export const Projects = () => (
-  <section id="projects" className="py-20 md:py-28">
+  <section id="projects" className="doodle-section py-20 md:py-28">
     <div className="container">
-      <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
+      <div className="mb-12 flex flex-wrap items-end justify-between gap-4 border-b-4 border-foreground pb-4">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Selected projects</h2>
-          <p className="text-muted-foreground max-w-2xl">A mix of production systems and experiments across AI, backend, and data.</p>
+          <h2 className="font-display text-4xl font-bold md:text-5xl">Selected Works</h2>
+          <p className="mt-3 max-w-xl text-muted-foreground">Production AI systems, playful agent experiments, and practical backend work.</p>
         </div>
+        <a href="#contact" className="font-label font-bold text-primary">
+          View Archive <ExternalLink className="inline h-4 w-4" />
+        </a>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((p) => (
+      <div className="grid gap-8 md:grid-cols-3">
+        {projects.map((p, index) => (
           <article
             key={p.title}
-            className="group card-elegant border border-border rounded-xl p-6 transition-smooth hover:border-primary/40 hover:-translate-y-1"
+            className={`sketch-card relative p-6 transition-smooth hover:-translate-y-1 ${
+              index === 1 ? "rotate-[-1deg]" : index === 2 ? "rotate-[1.5deg]" : "rotate-[0.8deg]"
+            }`}
           >
-            <div className="flex justify-between items-start mb-4">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold">
-                {p.title[0]}
-              </div>
-              <div className="flex gap-2 opacity-60 group-hover:opacity-100 transition-smooth">
-                {p.githubUrl && (
-                  <a
-                    href={p.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${p.title} GitHub`}
-                    className="hover:text-primary transition-smooth"
-                  >
-                    <Github className="h-4 w-4" />
-                  </a>
-                )}
-                {p.liveUrl && (
-                  <a
-                    href={p.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={p.liveLabel ?? `${p.title} live project`}
-                    className="hover:text-primary transition-smooth"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                )}
+            <div className="absolute right-0 top-0 flex h-16 w-16 items-center justify-center rounded-bl-full border-b-2 border-l-2 border-foreground bg-accent">
+              {index + 1}
+            </div>
+            <h3 className="mb-4 pr-12 font-display text-2xl font-bold leading-tight">{p.title}</h3>
+            <p className="mb-6 min-h-28 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+            <div className="mb-5 border-t-2 border-dashed border-foreground pt-4">
+              <div className="flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <span key={t} className="retro-chip text-[11px]">
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
-            <h3 className="font-semibold text-lg mb-2">{p.title}</h3>
-            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
-            <div className="flex flex-wrap gap-2">
-              {p.tags.map((t) => (
-                <span key={t} className="text-xs px-2 py-1 rounded-md bg-secondary text-muted-foreground border border-border">
-                  {t}
-                </span>
-              ))}
+            <div className="flex gap-2 font-label text-sm font-bold">
+              {p.githubUrl && (
+                <a href={p.githubUrl} target="_blank" rel="noreferrer" aria-label={`${p.title} GitHub`} className="inline-flex items-center gap-1 underline decoration-2 underline-offset-4">
+                  <Github className="h-4 w-4" /> GitHub
+                </a>
+              )}
+              {p.liveUrl && (
+                <a href={p.liveUrl} target="_blank" rel="noreferrer" aria-label={p.liveLabel ?? `${p.title} live project`} className="inline-flex items-center gap-1 underline decoration-2 underline-offset-4">
+                  <ExternalLink className="h-4 w-4" /> Play Store
+                </a>
+              )}
             </div>
           </article>
         ))}

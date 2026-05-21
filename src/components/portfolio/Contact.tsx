@@ -33,77 +33,73 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28">
-      <div className="container grid md:grid-cols-2 gap-12">
+    <section id="contact" className="doodle-section bg-secondary/60 py-20 md:py-28">
+      <div className="container grid gap-12 md:grid-cols-2">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's build something.</h2>
-          <p className="text-muted-foreground text-lg mb-8 max-w-md">
+          <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Let's build something.</h2>
+          <p className="mb-8 max-w-md text-lg text-muted-foreground">
             Open to AI engineering, backend, and consulting opportunities. Drop a message and I'll
             reply within a day.
           </p>
           <ul className="space-y-4">
             <li className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Mail className="h-4 w-4 text-primary" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-card">
+                <Mail className="h-4 w-4" />
               </div>
-              <a href="mailto:thihaa110@gmail.com" className="hover:text-primary transition-smooth">
+              <a href="mailto:thihaa110@gmail.com" className="text-foreground underline decoration-primary decoration-4 underline-offset-4 transition-smooth hover:text-primary">
                 thihaa110@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Phone className="h-4 w-4 text-primary" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-card">
+                <Phone className="h-4 w-4" />
               </div>
               <span>+66 935 078 500</span>
             </li>
             <li className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <MapPin className="h-4 w-4 text-primary" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-card">
+                <MapPin className="h-4 w-4" />
               </div>
               <span>Chiang Mai, Thailand</span>
             </li>
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} className="card-elegant border border-border rounded-2xl p-6 md:p-8 space-y-4">
+        <form onSubmit={onSubmit} className="sketch-card space-y-4 p-6">
           <div>
-            <label className="text-sm font-medium mb-2 block">Name</label>
+            <label className="mb-2 block font-label text-sm font-bold">Name</label>
             <input
               type="text"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               maxLength={100}
-              className="w-full px-4 py-3 rounded-md bg-secondary/50 border border-border focus:border-primary focus:outline-none transition-smooth"
+              className="retro-input"
               placeholder="Your name"
             />
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Email</label>
+            <label className="mb-2 block font-label text-sm font-bold">Email</label>
             <input
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               maxLength={255}
-              className="w-full px-4 py-3 rounded-md bg-secondary/50 border border-border focus:border-primary focus:outline-none transition-smooth"
+              className="retro-input"
               placeholder="you@example.com"
             />
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Message</label>
+            <label className="mb-2 block font-label text-sm font-bold">Message</label>
             <textarea
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               maxLength={2000}
-              className="w-full px-4 py-3 rounded-md bg-secondary/50 border border-border focus:border-primary focus:outline-none transition-smooth resize-none"
+              className="retro-input resize-none"
               placeholder="Tell me about your project..."
             />
           </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 transition-smooth glow disabled:opacity-50"
-          >
+          <button type="submit" disabled={loading} className="retro-button w-full disabled:translate-x-0 disabled:translate-y-0 disabled:opacity-50">
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
             {loading ? "Sending..." : "Send message"}
           </button>

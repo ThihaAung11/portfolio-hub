@@ -4,72 +4,83 @@
 
 @layer base {
   :root {
-    --background: 222 30% 6%;
-    --foreground: 160 20% 92%;
+    --background: 50 48% 94%;
+    --foreground: 0 0% 8%;
 
-    --card: 222 28% 9%;
-    --card-foreground: 160 20% 92%;
+    --card: 48 100% 98%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 222 28% 9%;
-    --popover-foreground: 160 20% 92%;
+    --popover: 48 100% 98%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 158 84% 52%;
-    --primary-foreground: 222 47% 8%;
-    --primary-glow: 165 90% 60%;
+    --primary: 359 86% 68%;
+    --primary-foreground: 0 0% 8%;
+    --primary-glow: 25 82% 84%;
 
-    --secondary: 222 25% 14%;
-    --secondary-foreground: 160 20% 92%;
+    --secondary: 43 78% 88%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 222 22% 13%;
-    --muted-foreground: 215 16% 60%;
+    --muted: 45 58% 88%;
+    --muted-foreground: 0 0% 30%;
 
-    --accent: 200 95% 60%;
-    --accent-foreground: 222 47% 8%;
+    --accent: 10 78% 84%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 72% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 25% 16%;
-    --input: 222 25% 16%;
-    --ring: 158 84% 52%;
+    --border: 0 0% 8%;
+    --input: 0 0% 8%;
+    --ring: 359 86% 68%;
 
-    --radius: 0.75rem;
+    --radius: 0;
 
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-text: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(222 28% 11%), hsl(222 28% 8%));
+    --gradient-primary: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-text: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(0 0% 8%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(45 100% 96%));
 
-    --shadow-glow: 0 0 60px -10px hsl(var(--primary) / 0.4);
-    --shadow-elegant: 0 20px 50px -20px hsl(222 80% 2% / 0.6);
+    --shadow-glow: 6px 6px 0 hsl(var(--foreground));
+    --shadow-elegant: 7px 7px 0 hsl(var(--foreground));
 
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 222 30% 6%;
-    --sidebar-foreground: 160 20% 92%;
-    --sidebar-primary: 158 84% 52%;
-    --sidebar-primary-foreground: 222 47% 8%;
-    --sidebar-accent: 222 25% 14%;
-    --sidebar-accent-foreground: 160 20% 92%;
-    --sidebar-border: 222 25% 16%;
-    --sidebar-ring: 158 84% 52%;
+    --sidebar-background: 50 48% 94%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 359 86% 68%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 43 100% 90%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 8%;
+    --sidebar-ring: 359 86% 68%;
   }
 }
 
 @layer base {
   * { @apply border-border; }
   body {
-    @apply bg-background text-foreground antialiased font-sans;
+    @apply bg-background text-foreground font-sans;
     font-feature-settings: "ss01", "cv11";
     background-color: hsl(var(--background));
     background-image:
-      linear-gradient(hsl(var(--border) / 0.35) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.35) 1px, transparent 1px);
-    background-size: 48px 48px;
-    background-position: -1px -1px;
+      radial-gradient(circle at 20% 15%, hsl(var(--primary) / 0.10), transparent 22rem),
+      radial-gradient(circle at 85% 22%, hsl(42 100% 83% / 0.35), transparent 20rem);
     background-attachment: fixed;
   }
-  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    background-image: radial-gradient(hsl(var(--foreground) / 0.055) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+  h1, h2, h3, h4 { @apply font-display; letter-spacing: -0.02em; }
   code, pre, kbd, samp { @apply font-mono; }
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
 }
 
 @layer utilities {
@@ -85,4 +96,67 @@
     box-shadow: var(--shadow-elegant);
   }
   .transition-smooth { transition: var(--transition-smooth); }
+  .font-label { font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; }
+  .crt-text { text-shadow: 2px 2px 0 hsl(var(--foreground) / 0.16); }
+  .hard-shadow-primary { box-shadow: 6px 6px 0 hsl(var(--foreground)); }
+  .hard-shadow-secondary { box-shadow: 6px 6px 0 hsl(var(--foreground)); }
+  .hard-shadow-accent { box-shadow: 6px 6px 0 hsl(var(--foreground)); }
+  .dithered {
+    background-color: hsl(var(--card));
+    background-image: none;
+  }
+  .retro-window {
+    @apply border-2 border-border bg-card text-foreground;
+    box-shadow: 7px 7px 0 hsl(var(--foreground));
+    transform: rotate(-0.35deg);
+  }
+  .retro-titlebar {
+    @apply flex items-center justify-between border-b-2 border-border px-3 py-2 font-label text-xs font-bold uppercase;
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+  .retro-titlebar-green {
+    background: hsl(156 45% 82%);
+    color: hsl(var(--foreground));
+  }
+  .retro-titlebar-blue {
+    background: hsl(209 100% 88%);
+    color: hsl(var(--foreground));
+  }
+  .retro-titlebar-pink {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  .retro-control {
+    @apply inline-flex h-4 w-4 items-center justify-center border-2 border-current text-[10px] leading-none;
+  }
+  .retro-button {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-border bg-primary px-6 py-3 font-label text-base font-bold text-primary-foreground transition-smooth;
+    box-shadow: 6px 6px 0 hsl(var(--foreground));
+  }
+  .retro-button:hover {
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 3px 3px 0 hsl(var(--foreground));
+    transform: translate(3px, 3px);
+  }
+  .retro-input {
+    @apply w-full border-2 border-border bg-card px-3 py-3 font-sans text-sm text-foreground outline-none transition-smooth placeholder:text-muted-foreground;
+  }
+  .retro-input:focus {
+    border-color: hsl(var(--primary));
+    box-shadow: 4px 4px 0 hsl(var(--foreground));
+  }
+  .retro-chip {
+    @apply inline-flex items-center gap-1 rounded-full border-2 border-border bg-secondary px-3 py-1 font-label text-xs font-bold text-secondary-foreground;
+  }
+  .doodle-section { @apply border-t-2 border-dashed border-foreground; }
+  .sketch-card {
+    @apply border-2 border-border bg-card;
+    border-radius: 47% 53% 48% 52% / 3% 4% 5% 3%;
+    box-shadow: 6px 6px 0 hsl(var(--foreground));
+  }
+  .scribble-underline {
+    background-image: linear-gradient(transparent 65%, hsl(var(--secondary)) 65%);
+  }
 }

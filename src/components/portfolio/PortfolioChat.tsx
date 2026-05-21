@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { Bot, Download, MessageCircle, Send, User, X } from "lucide-react";
+import { Bot, Download, Send, User, X } from "lucide-react";
 
 type Message = {
   role: "assistant" | "user";
@@ -110,21 +110,21 @@ export const PortfolioChat = () => {
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
       {open && (
-        <section className="w-[min(calc(100vw-2.5rem),380px)] overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
-          <header className="flex items-center justify-between border-b border-border bg-secondary/60 px-4 py-3">
+        <section className="sketch-card w-[min(calc(100vw-2.5rem),390px)] overflow-hidden bg-card">
+          <header className="flex items-center justify-between border-b-2 border-foreground bg-secondary px-4 py-3 font-label">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-current bg-card">
                 <Bot className="h-4 w-4" />
               </div>
               <div>
-                <h2 className="text-sm font-semibold">Thiha Assistant</h2>
-                <p className="text-xs text-muted-foreground">Resume-aware portfolio chat</p>
+                <h2 className="text-sm font-bold">Ask Thiha's Agent</h2>
+                <p className="text-xs opacity-80">Resume-aware doodle chat</p>
               </div>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="rounded-md p-2 text-muted-foreground transition-smooth hover:bg-secondary hover:text-foreground"
+              className="rounded-full border-2 border-current p-1 transition-smooth hover:bg-primary"
               aria-label="Close chat"
             >
               <X className="h-4 w-4" />
@@ -135,15 +135,15 @@ export const PortfolioChat = () => {
             {messages.map((message, index) => (
               <div key={`${message.role}-${index}`} className={`flex gap-3 ${message.role === "user" ? "justify-end" : ""}`}>
                 {message.role === "assistant" && (
-                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-secondary">
                     <Bot className="h-3.5 w-3.5" />
                   </div>
                 )}
                 <div
-                  className={`max-w-[82%] rounded-lg px-3 py-2 text-sm leading-relaxed ${
+                  className={`max-w-[82%] rounded-2xl border-2 px-3 py-2 text-sm leading-relaxed ${
                     message.role === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "border border-border bg-secondary/50 text-foreground"
+                      ? "border-foreground bg-primary text-primary-foreground"
+                      : "border-border bg-card text-foreground"
                   }`}
                 >
                   <p>{message.content}</p>
@@ -151,7 +151,7 @@ export const PortfolioChat = () => {
                     <a
                       href={resumeUrl}
                       download
-                      className="mt-3 inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-xs font-medium text-primary-foreground transition-smooth hover:opacity-90"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-3 py-2 font-label text-xs font-bold text-primary-foreground transition-smooth hover:bg-secondary"
                     >
                       <Download className="h-3.5 w-3.5" />
                       Download resume
@@ -159,7 +159,7 @@ export const PortfolioChat = () => {
                   )}
                 </div>
                 {message.role === "user" && (
-                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-secondary text-muted-foreground">
+                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-card">
                     <User className="h-3.5 w-3.5" />
                   </div>
                 )}
@@ -167,14 +167,14 @@ export const PortfolioChat = () => {
             ))}
           </div>
 
-          <div className="border-t border-border p-3">
+          <div className="border-t-2 border-border p-3">
             <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
               {quickActions.map((suggestion) => (
                 <button
                   key={suggestion}
                   type="button"
                   onClick={() => sendMessage(suggestion)}
-                  className="shrink-0 rounded-full border border-border bg-secondary/50 px-3 py-1.5 text-xs text-muted-foreground transition-smooth hover:border-primary/40 hover:text-foreground"
+                  className="shrink-0 rounded-full border-2 border-border bg-card px-3 py-1.5 font-label text-xs font-bold text-muted-foreground transition-smooth hover:bg-secondary hover:text-foreground"
                 >
                   {suggestion}
                 </button>
@@ -185,11 +185,11 @@ export const PortfolioChat = () => {
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 placeholder="Ask about Thiha..."
-                className="min-w-0 flex-1 rounded-md border border-border bg-secondary/50 px-3 py-2 text-sm outline-none transition-smooth placeholder:text-muted-foreground focus:border-primary"
+                className="retro-input min-w-0 flex-1 py-2"
               />
               <button
                 type="submit"
-                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground transition-smooth hover:opacity-90"
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-smooth hover:bg-secondary"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
@@ -202,10 +202,10 @@ export const PortfolioChat = () => {
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition-smooth hover:scale-105 hover:opacity-95"
+        className="inline-flex h-14 w-16 items-center justify-center rounded-full border-2 border-foreground bg-primary font-display text-lg font-bold text-primary-foreground transition-smooth hard-shadow-secondary hover:translate-x-1 hover:translate-y-1 hover:bg-secondary hover:shadow-none"
         aria-label={open ? "Close portfolio chat" : "Open portfolio chat"}
       >
-        {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
+        {open ? <X className="h-5 w-5" /> : ">_"}
       </button>
     </div>
   );

@@ -8,22 +8,30 @@ const groups = [
 ];
 
 export const Skills = () => (
-  <section id="skills" className="py-20 md:py-28 bg-secondary/20">
+  <section id="skills" className="doodle-section py-20 md:py-28">
     <div className="container">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12">Skills & toolbox</h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {groups.map((g) => (
-          <div key={g.title} className="card-elegant border border-border rounded-xl p-6">
-            <h3 className="font-semibold mb-4 text-primary">{g.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {g.items.map((i) => (
-                <span key={i} className="text-sm px-3 py-1.5 rounded-md bg-secondary border border-border">
-                  {i}
-                </span>
-              ))}
+      <div className="grid items-center gap-12 lg:grid-cols-[0.75fr_1fr]">
+        <div>
+          <img src="/doodles/sitting-reading.svg" alt="Open Doodles reading character" className="mx-auto max-h-96 rotate-[-2deg]" />
+          <h2 className="mt-8 font-display text-4xl font-bold md:text-5xl">Toolbox Doodles</h2>
+          <p className="mt-4 text-muted-foreground">
+            The tools I reach for when turning fuzzy ideas into shipped AI products.
+          </p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {groups.map((g, index) => (
+            <div key={g.title} className={`sketch-card p-5 ${index % 2 ? "rotate-1" : "rotate-[-1deg]"}`}>
+              <h3 className="mb-4 border-b-2 border-foreground pb-2 font-display text-xl font-bold">{g.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {g.items.map((i) => (
+                  <span key={i} className="retro-chip bg-card text-[11px]">
+                    {i}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>

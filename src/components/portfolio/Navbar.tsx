@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -17,19 +16,18 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
-      }`}
-    >
-      <nav className="container flex h-16 items-center justify-between">
-        <a href="#" className="font-bold text-lg tracking-tight">
-          Thiha<span className="text-gradient">.</span>
+    <header className={`fixed top-0 inset-x-0 z-50 border-b-2 border-foreground bg-background transition-smooth ${scrolled ? "bg-background/95 shadow-[0_4px_0_hsl(var(--foreground))]" : ""}`}>
+      <nav className="container flex min-h-16 items-center justify-between gap-4 py-2">
+        <a href="#" className="font-display text-3xl font-bold text-foreground md:text-4xl">
+          Thiha<span className="text-primary">.</span>
         </a>
-        <ul className="hidden md:flex items-center gap-8 text-sm">
+        <ul className="hidden items-center gap-6 font-label text-sm font-semibold md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-muted-foreground hover:text-foreground transition-smooth">
+              <a
+                href={l.href}
+                className="rounded-full px-3 py-1 text-foreground transition-smooth hover:bg-secondary hover:text-foreground"
+              >
                 {l.label}
               </a>
             </li>
@@ -37,9 +35,9 @@ export const Navbar = () => {
         </ul>
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center px-4 py-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 transition-smooth"
+          className="hidden border-2 border-foreground bg-primary px-5 py-2 font-label text-sm font-bold text-primary-foreground transition-smooth hard-shadow-primary hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:inline-flex"
         >
-          Get in touch
+          Hire Me
         </a>
       </nav>
     </header>

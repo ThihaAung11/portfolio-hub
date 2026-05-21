@@ -49,26 +49,36 @@ const experiences = [
 ];
 
 export const Experience = () => (
-  <section id="experience" className="py-20 md:py-28 bg-secondary/20">
+  <section id="experience" className="doodle-section bg-secondary/45 py-20 md:py-28">
     <div className="container">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12">Experience</h2>
+      <div className="mb-12 grid items-end gap-8 md:grid-cols-[1fr_0.8fr]">
+        <div>
+          <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Process & Experience</h2>
+          <p className="max-w-2xl text-muted-foreground">
+            The work history behind the systems: production architecture, RAG workflows, data pipelines, and shipping reliable AI features.
+          </p>
+        </div>
+        <img src="/doodles/running.svg" alt="Open Doodles running character" className="mx-auto max-h-56 rotate-2 object-contain" />
+      </div>
       <div className="space-y-6">
-        {experiences.map((exp) => (
-          <article
-            key={exp.company + exp.period}
-            className="card-elegant border border-border rounded-xl p-6 md:p-8 hover:border-primary/40 transition-smooth"
-          >
-            <div className="flex flex-wrap justify-between gap-2 mb-4">
+        {experiences.map((exp, index) => (
+          <article key={exp.company + exp.period} className="sketch-card bg-card p-6">
+            <div className="mb-4 flex flex-wrap justify-between gap-3 border-b-2 border-dashed border-foreground pb-3">
               <div>
-                <h3 className="text-xl font-semibold">{exp.role}</h3>
-                <p className="text-primary">{exp.company} · <span className="text-muted-foreground">{exp.location}</span></p>
+                <div className="mb-1 font-label text-sm font-bold text-primary">Step {index + 1}</div>
+                <h3 className="font-display text-2xl font-bold text-foreground">{exp.role}</h3>
+                <p className="font-label font-bold text-foreground">
+                  {exp.company} <span className="font-normal text-muted-foreground">· {exp.location}</span>
+                </p>
               </div>
-              <span className="text-sm text-muted-foreground">{exp.period}</span>
+              <span className="h-fit rounded-full border-2 border-foreground bg-accent px-3 py-1 font-label text-xs font-bold">
+                {exp.period}
+              </span>
             </div>
-            <ul className="space-y-2 text-muted-foreground">
-              {exp.points.map((p, i) => (
-                <li key={i} className="flex gap-3">
-                  <span className="text-primary mt-1.5">▹</span>
+            <ul className="grid gap-2 text-muted-foreground md:grid-cols-2">
+              {exp.points.map((p) => (
+                <li key={p} className="flex gap-3">
+                  <span className="mt-1 text-primary">✦</span>
                   <span>{p}</span>
                 </li>
               ))}
