@@ -118,7 +118,7 @@ export const PortfolioChat = () => {
               </div>
               <div>
                 <h2 className="text-sm font-bold">Ask Thiha's Agent</h2>
-                <p className="text-xs opacity-80">Resume-aware doodle chat</p>
+                <p className="text-xs opacity-80">Resume-aware portfolio chat</p>
               </div>
             </div>
             <button
@@ -135,7 +135,7 @@ export const PortfolioChat = () => {
             {messages.map((message, index) => (
               <div key={`${message.role}-${index}`} className={`flex gap-3 ${message.role === "user" ? "justify-end" : ""}`}>
                 {message.role === "assistant" && (
-                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-secondary">
+                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-secondary">
                     <Bot className="h-3.5 w-3.5" />
                   </div>
                 )}
@@ -151,7 +151,7 @@ export const PortfolioChat = () => {
                     <a
                       href={resumeUrl}
                       download
-                      className="mt-3 inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-3 py-2 font-label text-xs font-bold text-primary-foreground transition-smooth hover:bg-secondary"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary px-3 py-2 font-label text-xs font-semibold text-primary-foreground transition-smooth hover:bg-primary/90"
                     >
                       <Download className="h-3.5 w-3.5" />
                       Download resume
@@ -159,7 +159,7 @@ export const PortfolioChat = () => {
                   )}
                 </div>
                 {message.role === "user" && (
-                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-card">
+                  <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-card">
                     <User className="h-3.5 w-3.5" />
                   </div>
                 )}
@@ -167,14 +167,14 @@ export const PortfolioChat = () => {
             ))}
           </div>
 
-          <div className="border-t-2 border-border p-3">
+          <div className="border-t border-border p-3">
             <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
               {quickActions.map((suggestion) => (
                 <button
                   key={suggestion}
                   type="button"
                   onClick={() => sendMessage(suggestion)}
-                  className="shrink-0 rounded-full border-2 border-border bg-card px-3 py-1.5 font-label text-xs font-bold text-muted-foreground transition-smooth hover:bg-secondary hover:text-foreground"
+                  className="shrink-0 rounded-full border border-border bg-card px-3 py-1.5 font-label text-xs font-medium text-muted-foreground transition-smooth hover:bg-secondary hover:text-foreground"
                 >
                   {suggestion}
                 </button>
@@ -189,7 +189,7 @@ export const PortfolioChat = () => {
               />
               <button
                 type="submit"
-                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-smooth hover:bg-secondary"
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-smooth hover:bg-primary/90"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
@@ -202,7 +202,7 @@ export const PortfolioChat = () => {
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="inline-flex h-14 w-16 items-center justify-center rounded-full border-2 border-foreground bg-primary font-display text-lg font-bold text-primary-foreground transition-smooth hard-shadow-secondary hover:translate-x-1 hover:translate-y-1 hover:bg-secondary hover:shadow-none"
+        className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary font-display text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-smooth hover:-translate-y-0.5 hover:bg-primary/90"
         aria-label={open ? "Close portfolio chat" : "Open portfolio chat"}
       >
         {open ? <X className="h-5 w-5" /> : ">_"}

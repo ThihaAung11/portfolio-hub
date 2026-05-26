@@ -16,7 +16,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 border-b-2 border-foreground bg-background transition-smooth ${scrolled ? "bg-background/95 shadow-[0_4px_0_hsl(var(--foreground))]" : ""}`}>
+    <header className={`fixed top-0 inset-x-0 z-50 border-b border-border bg-background/95 backdrop-blur transition-smooth ${scrolled ? "shadow-sm" : ""}`}>
       <nav className="container flex min-h-16 items-center justify-between gap-4 py-2">
         <a href="#" className="font-display text-3xl font-bold text-foreground md:text-4xl">
           Thiha<span className="text-primary">.</span>
@@ -35,7 +35,7 @@ export const Navbar = () => {
         </ul>
         <a
           href="#contact"
-          className="hidden border-2 border-foreground bg-primary px-5 py-2 font-label text-sm font-bold text-primary-foreground transition-smooth hard-shadow-primary hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:inline-flex"
+          className="hidden rounded-md bg-primary px-5 py-2 font-label text-sm font-semibold text-primary-foreground transition-smooth hover:bg-primary/90 md:inline-flex"
         >
           Hire Me
         </a>

@@ -15,10 +15,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Space Grotesk"', "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ['"Space Grotesk"', "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ['"Courier Prime"', "ui-monospace", "SFMono-Regular", "monospace"],
-        label: ['"Space Grotesk"', "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ['Helvetica', '"Helvetica Neue"', "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['Helvetica', '"Helvetica Neue"', "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ['"SFMono-Regular"', "Consolas", "ui-monospace", "monospace"],
+        label: ['Helvetica', '"Helvetica Neue"', "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

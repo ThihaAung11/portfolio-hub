@@ -49,36 +49,33 @@ const experiences = [
 ];
 
 export const Experience = () => (
-  <section id="experience" className="doodle-section bg-secondary/45 py-20 md:py-28">
+  <section id="experience" className="section-divider bg-muted/40 py-20 md:py-28">
     <div className="container">
-      <div className="mb-12 grid items-end gap-8 md:grid-cols-[1fr_0.8fr]">
-        <div>
-          <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Process & Experience</h2>
-          <p className="max-w-2xl text-muted-foreground">
-            The work history behind the systems: production architecture, RAG workflows, data pipelines, and shipping reliable AI features.
-          </p>
-        </div>
-        <img src="/doodles/running.svg" alt="Open Doodles running character" className="mx-auto max-h-56 rotate-2 object-contain" />
+      <div className="mb-12">
+        <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Experience</h2>
+        <p className="max-w-2xl text-muted-foreground">
+          Production architecture, RAG workflows, data pipelines, and reliable AI feature delivery.
+        </p>
       </div>
       <div className="space-y-6">
         {experiences.map((exp, index) => (
           <article key={exp.company + exp.period} className="sketch-card bg-card p-6">
-            <div className="mb-4 flex flex-wrap justify-between gap-3 border-b-2 border-dashed border-foreground pb-3">
+            <div className="mb-4 flex flex-wrap justify-between gap-3 border-b border-border pb-3">
               <div>
-                <div className="mb-1 font-label text-sm font-bold text-primary">Step {index + 1}</div>
+                <div className="mb-1 font-label text-sm font-semibold text-primary">Role {index + 1}</div>
                 <h3 className="font-display text-2xl font-bold text-foreground">{exp.role}</h3>
                 <p className="font-label font-bold text-foreground">
                   {exp.company} <span className="font-normal text-muted-foreground">· {exp.location}</span>
                 </p>
               </div>
-              <span className="h-fit rounded-full border-2 border-foreground bg-accent px-3 py-1 font-label text-xs font-bold">
+              <span className="h-fit rounded-full bg-secondary px-3 py-1 font-label text-xs font-semibold text-secondary-foreground">
                 {exp.period}
               </span>
             </div>
             <ul className="grid gap-2 text-muted-foreground md:grid-cols-2">
               {exp.points.map((p) => (
                 <li key={p} className="flex gap-3">
-                  <span className="mt-1 text-primary">✦</span>
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{p}</span>
                 </li>
               ))}

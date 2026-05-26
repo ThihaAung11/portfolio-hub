@@ -33,7 +33,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="doodle-section bg-secondary/60 py-20 md:py-28">
+    <section id="contact" className="section-divider bg-secondary/60 py-20 md:py-28">
       <div className="container grid gap-12 md:grid-cols-2">
         <div>
           <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Let's build something.</h2>
@@ -43,21 +43,21 @@ export const Contact = () => {
           </p>
           <ul className="space-y-4">
             <li className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-card">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card">
                 <Mail className="h-4 w-4" />
               </div>
-              <a href="mailto:thihaa110@gmail.com" className="text-foreground underline decoration-primary decoration-4 underline-offset-4 transition-smooth hover:text-primary">
+              <a href="mailto:thihaa110@gmail.com" className="text-foreground underline decoration-primary decoration-2 underline-offset-4 transition-smooth hover:text-primary">
                 thihaa110@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-card">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card">
                 <Phone className="h-4 w-4" />
               </div>
               <span>+66 935 078 500</span>
             </li>
             <li className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-card">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card">
                 <MapPin className="h-4 w-4" />
               </div>
               <span>Chiang Mai, Thailand</span>

@@ -32,31 +32,26 @@ const projects: {
 ];
 
 export const Projects = () => (
-  <section id="projects" className="doodle-section py-20 md:py-28">
+  <section id="projects" className="section-divider py-20 md:py-28">
     <div className="container">
-      <div className="mb-12 flex flex-wrap items-end justify-between gap-4 border-b-4 border-foreground pb-4">
+      <div className="mb-12 border-b border-border pb-4">
         <div>
-          <h2 className="font-display text-4xl font-bold md:text-5xl">Selected Works</h2>
-          <p className="mt-3 max-w-xl text-muted-foreground">Production AI systems, playful agent experiments, and practical backend work.</p>
+          <h2 className="font-display text-4xl font-bold md:text-5xl">Selected Projects</h2>
+          <p className="mt-3 max-w-xl text-muted-foreground">Production AI systems, agent workflows, and practical backend work.</p>
         </div>
-        <a href="#contact" className="font-label font-bold text-primary">
-          View Archive <ExternalLink className="inline h-4 w-4" />
-        </a>
       </div>
       <div className="grid gap-8 md:grid-cols-3">
         {projects.map((p, index) => (
           <article
             key={p.title}
-            className={`sketch-card relative p-6 transition-smooth hover:-translate-y-1 ${
-              index === 1 ? "rotate-[-1deg]" : index === 2 ? "rotate-[1.5deg]" : "rotate-[0.8deg]"
-            }`}
+            className="sketch-card relative p-6 transition-smooth hover:-translate-y-1"
           >
-            <div className="absolute right-0 top-0 flex h-16 w-16 items-center justify-center rounded-bl-full border-b-2 border-l-2 border-foreground bg-accent">
+            <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-secondary-foreground">
               {index + 1}
             </div>
             <h3 className="mb-4 pr-12 font-display text-2xl font-bold leading-tight">{p.title}</h3>
             <p className="mb-6 min-h-28 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-            <div className="mb-5 border-t-2 border-dashed border-foreground pt-4">
+            <div className="mb-5 border-t border-border pt-4">
               <div className="flex flex-wrap gap-2">
                 {p.tags.map((t) => (
                   <span key={t} className="retro-chip text-[11px]">
