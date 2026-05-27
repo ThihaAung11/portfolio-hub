@@ -6,8 +6,8 @@ const groups = [
 ];
 
 export const Skills = () => (
-  <section id="skills" className="section-divider py-20 md:py-28">
-    <div className="container">
+  <section id="skills" className="section-divider py-16 md:py-20">
+    <div className="page-shell">
       <div className="mb-12">
         <h2 className="font-display text-4xl font-bold md:text-5xl">Skills & Tools</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">

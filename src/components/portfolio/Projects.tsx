@@ -32,8 +32,8 @@ const projects: {
 ];
 
 export const Projects = () => (
-  <section id="projects" className="section-divider py-20 md:py-28">
-    <div className="container">
+  <section id="projects" className="section-divider py-16 md:py-20">
+    <div className="page-shell">
       <div className="mb-12 border-b border-border pb-4">
         <div>
           <h2 className="font-display text-4xl font-bold md:text-5xl">Selected Projects</h2>

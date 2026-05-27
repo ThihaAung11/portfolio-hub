@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <header className={`fixed top-0 inset-x-0 z-50 border-b border-border bg-background/95 backdrop-blur transition-smooth ${scrolled ? "shadow-sm" : ""}`}>
-      <nav className="container flex min-h-16 items-center justify-between gap-4 py-2">
+      <nav className="page-shell flex min-h-16 items-center justify-between gap-4 py-2">
         <a href="#" className="font-display text-3xl font-bold text-foreground md:text-4xl">
           Thiha<span className="text-primary">.</span>
         </a>

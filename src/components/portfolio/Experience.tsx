@@ -49,8 +49,8 @@ const experiences = [
 ];
 
 export const Experience = () => (
-  <section id="experience" className="section-divider bg-muted/40 py-20 md:py-28">
-    <div className="container">
+  <section id="experience" className="section-divider bg-muted/40 py-16 md:py-20">
+    <div className="page-shell">
       <div className="mb-12">
         <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Experience</h2>
         <p className="max-w-2xl text-muted-foreground">

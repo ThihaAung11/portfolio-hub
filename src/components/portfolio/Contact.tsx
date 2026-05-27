@@ -33,8 +33,8 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-divider bg-secondary/60 py-20 md:py-28">
-      <div className="container grid gap-12 md:grid-cols-2">
+    <section id="contact" className="section-divider bg-secondary/60 py-16 md:py-20">
+      <div className="page-shell grid gap-12 md:grid-cols-2">
         <div>
           <h2 className="mb-4 font-display text-4xl font-bold md:text-5xl">Let's build something.</h2>
           <p className="mb-8 max-w-md text-lg text-muted-foreground">
